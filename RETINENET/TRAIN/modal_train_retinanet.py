@@ -1,11 +1,11 @@
 import os
 import modal
 
-# 1. Define Persistent Storage Volume for V2
-volume = modal.Volume.from_name("retinanet-v2-vol", create_if_missing=True)
+# 1. Define Persistent Storage Volume for V3
+volume = modal.Volume.from_name("retinanet-v3-vol", create_if_missing=True)
 
 # 2. Define App
-app = modal.App(name="retinanet-training-v2")
+app = modal.App(name="retinanet-training-v3")
 
 # 3. Define Docker Image
 image = (
@@ -161,7 +161,8 @@ def train():
         box_format='xyxy',
         iou_type='bbox',
         iou_thresholds=iou_steps,
-        class_metrics=True
+        class_metrics=True,
+        extended_summary=True
     )
     
     storage_dir = Path("/storage/retinanet_results_v3")
@@ -237,10 +238,25 @@ def train():
         metrics_result = val_metric.compute()
         map50 = metrics_result['map_50'].item()
         map50_95 = metrics_result['map'].item()
+        
+        prec_tensor = metrics_result.get("precision")
+        if prec_tensor is not None and prec_tensor.numel() > 0:
+            valid_p = prec_tensor[prec_tensor >= 0]
+            precision = valid_p.mean().item() if valid_p.numel() > 0 else 0.0
+        else:
+            precision = 0.0
+
+        rec_tensor = metrics_result.get("recall")
+        if rec_tensor is not None and rec_tensor.numel() > 0:
+            valid_r = rec_tensor[rec_tensor >= 0]
+            recall = valid_r.mean().item() if valid_r.numel() > 0 else 0.0
+        else:
+            recall = 0.0
+
         val_metric.reset()  # Reset cache for next epoch
         
         print(f"Train Loss: {avg_loss:.4f} (Cls: {avg_cls:.4f}, Box: {avg_box:.4f})")
-        print(f"Val mAP50: {map50:.4f} | Val mAP50-95: {map50_95:.4f}")
+        print(f"Val Precision: {precision:.4f} | Val Recall: {recall:.4f} | Val mAP50: {map50:.4f} | Val mAP50-95: {map50_95:.4f}")
         
         current_lr = optimizer.param_groups[0]['lr']
         scheduler.step()  # Update Learning Rate Scheduler
@@ -248,19 +264,21 @@ def train():
         
         log_entry = {
             "Epoch": epoch,
-            "Train loss": round(avg_loss, 4),
-            "Class loss": round(avg_cls, 4),
-            "Box loss": round(avg_box, 4),
+            "Train loss": round(avg_loss, 5),
+            "Class loss": round(avg_cls, 5),
+            "Box loss": round(avg_box, 5),
             "Learning rate": current_lr,
-            "Val mAP50": round(map50, 4),
-            "Val mAP50-95": round(map50_95, 4),
+            "Val Precision": round(precision, 5),
+            "Val Recall": round(recall, 5),
+            "Val mAP50": round(map50, 5),
+            "Val mAP50-95": round(map50_95, 5),
             "Time(s)": round(epoch_time, 2)
         }
         
         logs.append(log_entry)
         
         df = pd.DataFrame(logs)
-        df.to_csv(storage_dir / "retinanet_formatted_results_v2.csv", index=False)
+        df.to_csv(storage_dir / "retinanet_formatted_results_v3.csv", index=False)
         
         # Early Stopping check & checkpoint save
         is_best = map50_95 > best_map50_95

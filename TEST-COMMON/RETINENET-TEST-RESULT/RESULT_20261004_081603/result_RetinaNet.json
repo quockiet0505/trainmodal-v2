@@ -1,0 +1,810 @@
+{
+  "model_key": "RetinaNet",
+  "model_name": "RetinaNet",
+  "Precision": 0.9094,
+  "Recall": 0.9568,
+  "F1": 0.9325,
+  "mAP50": 0.9624,
+  "mAP50_95": 0.7961,
+  "mAP75": 0.8793,
+  "AP_small": -1.0,
+  "AP_medium": 0.6632,
+  "AP_large": 0.8072,
+  "AR1": 0.5728,
+  "AR10": 0.8396,
+  "AR100": 0.8449,
+  "Patience": 10,
+  "GFLOPs": 86.99,
+  "Parameters": 32.86,
+  "Latency": 21.85,
+  "FPS": 45.76,
+  "status": "Hoàn tất đánh giá",
+  "protocol": {
+    "name": "common-coco-v7-640-b1",
+    "evaluator": "pycocotools.cocoeval.COCOeval",
+    "evaluator_source_sha256": "446a7f00e7f8cc5d90d12f366d3c3cd9a3688362b33aa953e7dd53c4033c1979",
+    "iou_type": "bbox",
+    "annotation_sha256": "d7f69d3b3933acd390fae8b65cb577e9e07d7b9b96031ab39ab74cdbc9901376",
+    "image_ids_sha256": "8fdcdab95ef5acfb670ab03dc6f0d1fffcc862f6a0ee7715deb172e7266557d5",
+    "num_test_images": 1481,
+    "categories": [
+      {
+        "id": 1,
+        "name": "beef"
+      },
+      {
+        "id": 2,
+        "name": "bellpepper"
+      },
+      {
+        "id": 3,
+        "name": "bittergourd"
+      },
+      {
+        "id": 4,
+        "name": "bottlegourd"
+      },
+      {
+        "id": 5,
+        "name": "broccoli"
+      },
+      {
+        "id": 6,
+        "name": "cabbage"
+      },
+      {
+        "id": 7,
+        "name": "carrot"
+      },
+      {
+        "id": 8,
+        "name": "cauliflower"
+      },
+      {
+        "id": 9,
+        "name": "chayote"
+      },
+      {
+        "id": 10,
+        "name": "chicken"
+      },
+      {
+        "id": 11,
+        "name": "chickenegg"
+      },
+      {
+        "id": 12,
+        "name": "chickenleg"
+      },
+      {
+        "id": 13,
+        "name": "chickenwin"
+      },
+      {
+        "id": 14,
+        "name": "corn"
+      },
+      {
+        "id": 15,
+        "name": "cucumber"
+      },
+      {
+        "id": 16,
+        "name": "duckegg"
+      },
+      {
+        "id": 17,
+        "name": "eggplant"
+      },
+      {
+        "id": 18,
+        "name": "garlic"
+      },
+      {
+        "id": 19,
+        "name": "ginger"
+      },
+      {
+        "id": 20,
+        "name": "jicama"
+      },
+      {
+        "id": 21,
+        "name": "okra"
+      },
+      {
+        "id": 22,
+        "name": "onion"
+      },
+      {
+        "id": 23,
+        "name": "pork"
+      },
+      {
+        "id": 24,
+        "name": "potato"
+      },
+      {
+        "id": 25,
+        "name": "pumpkin"
+      },
+      {
+        "id": 26,
+        "name": "radish"
+      },
+      {
+        "id": 27,
+        "name": "scallion"
+      },
+      {
+        "id": 28,
+        "name": "shrimp"
+      },
+      {
+        "id": 29,
+        "name": "spongegourd"
+      },
+      {
+        "id": 30,
+        "name": "sweetpotato"
+      },
+      {
+        "id": 31,
+        "name": "tofu"
+      },
+      {
+        "id": 32,
+        "name": "tomato"
+      }
+    ],
+    "settings": {
+      "inference_imgsz": 640,
+      "inference_batch_size": 1,
+      "prediction_conf_threshold": 0.0,
+      "operating_conf_threshold": 0.55,
+      "operating_iou_threshold": 0.5,
+      "operating_metric_source": "pycocotools.COCOeval.evalImgs",
+      "operating_averaging": "micro_over_all_categories",
+      "max_detections": 100,
+      "latency_batch_size": 1,
+      "latency_warmup_runs": 10,
+      "runtime_device": "NVIDIA A100-SXM4-40GB",
+      "coco_iou_thresholds": [
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "coco_area_ranges": [
+        "all",
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "software": {
+      "python": "3.10.17",
+      "pycocotools": "2.0.8",
+      "torch": "2.5.1",
+      "torchvision": "0.20.1",
+      "ultralytics": "8.4.161",
+      "rfdetr": "1.11.0"
+    },
+    "protocol_id": "729c28d00fa5c8e2a5b3e56c1dd1fa0efd45bbf05d4f7e0d67cc0307a44068a1"
+  },
+  "model_provenance": {
+    "family": "torchvision",
+    "model_type": "retinanet_resnet50_fpn",
+    "model_class": null,
+    "checkpoint_sha256": "6b006546b2aa25083f9d16f992bd6ebd0432b64591beb620bddcaf45d47a2758",
+    "inference_imgsz": 640,
+    "inference_batch_size": 1,
+    "device": "cuda:0",
+    "inference_config": {
+      "requested": {
+        "family": "torchvision",
+        "model_type": "retinanet_resnet50_fpn",
+        "model_class": null,
+        "imgsz": 640,
+        "batch_size": 1,
+        "prediction_conf_threshold": 0.0,
+        "max_detections": 100,
+        "label_offset": 1,
+        "nms_iou_threshold": null,
+        "constructor_kwargs": {
+          "nms_thresh": 0.5
+        },
+        "checkpoint_classes": [
+          "beef",
+          "bellpepper",
+          "bittergourd",
+          "bottlegourd",
+          "broccoli",
+          "cabbage",
+          "carrot",
+          "cauliflower",
+          "chayote",
+          "chicken",
+          "chickenegg",
+          "chickenleg",
+          "chickenwin",
+          "corn",
+          "cucumber",
+          "duckegg",
+          "eggplant",
+          "garlic",
+          "ginger",
+          "jicama",
+          "okra",
+          "onion",
+          "pork",
+          "potato",
+          "pumpkin",
+          "radish",
+          "scallion",
+          "shrimp",
+          "spongegourd",
+          "sweetpotato",
+          "tofu",
+          "tomato"
+        ],
+        "class_name_map": {},
+        "ignored_checkpoint_classes": [
+          "19-8-BoSungAnhChoCacLopBiTh-v3zo"
+        ]
+      },
+      "effective": {
+        "imgsz": 640,
+        "prediction_conf_threshold": 0.0,
+        "max_detections": 100,
+        "backend_max_detections": 300,
+        "nms_iou_threshold": null,
+        "constructor_kwargs": {
+          "nms_thresh": 0.5,
+          "min_size": 640,
+          "max_size": 640,
+          "score_thresh": 0.0,
+          "detections_per_img": 300
+        },
+        "background_class_id": null,
+        "ignored_output_labels": [
+          0
+        ]
+      },
+      "checkpoint_classes": [
+        {
+          "index": 0,
+          "name": "beef"
+        },
+        {
+          "index": 1,
+          "name": "bellpepper"
+        },
+        {
+          "index": 2,
+          "name": "bittergourd"
+        },
+        {
+          "index": 3,
+          "name": "bottlegourd"
+        },
+        {
+          "index": 4,
+          "name": "broccoli"
+        },
+        {
+          "index": 5,
+          "name": "cabbage"
+        },
+        {
+          "index": 6,
+          "name": "carrot"
+        },
+        {
+          "index": 7,
+          "name": "cauliflower"
+        },
+        {
+          "index": 8,
+          "name": "chayote"
+        },
+        {
+          "index": 9,
+          "name": "chicken"
+        },
+        {
+          "index": 10,
+          "name": "chickenegg"
+        },
+        {
+          "index": 11,
+          "name": "chickenleg"
+        },
+        {
+          "index": 12,
+          "name": "chickenwin"
+        },
+        {
+          "index": 13,
+          "name": "corn"
+        },
+        {
+          "index": 14,
+          "name": "cucumber"
+        },
+        {
+          "index": 15,
+          "name": "duckegg"
+        },
+        {
+          "index": 16,
+          "name": "eggplant"
+        },
+        {
+          "index": 17,
+          "name": "garlic"
+        },
+        {
+          "index": 18,
+          "name": "ginger"
+        },
+        {
+          "index": 19,
+          "name": "jicama"
+        },
+        {
+          "index": 20,
+          "name": "okra"
+        },
+        {
+          "index": 21,
+          "name": "onion"
+        },
+        {
+          "index": 22,
+          "name": "pork"
+        },
+        {
+          "index": 23,
+          "name": "potato"
+        },
+        {
+          "index": 24,
+          "name": "pumpkin"
+        },
+        {
+          "index": 25,
+          "name": "radish"
+        },
+        {
+          "index": 26,
+          "name": "scallion"
+        },
+        {
+          "index": 27,
+          "name": "shrimp"
+        },
+        {
+          "index": 28,
+          "name": "spongegourd"
+        },
+        {
+          "index": 29,
+          "name": "sweetpotato"
+        },
+        {
+          "index": 30,
+          "name": "tofu"
+        },
+        {
+          "index": 31,
+          "name": "tomato"
+        }
+      ],
+      "class_idx_to_category_id": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 6,
+        "6": 7,
+        "7": 8,
+        "8": 9,
+        "9": 10,
+        "10": 11,
+        "11": 12,
+        "12": 13,
+        "13": 14,
+        "14": 15,
+        "15": 16,
+        "16": 17,
+        "17": 18,
+        "18": 19,
+        "19": 20,
+        "20": 21,
+        "21": 22,
+        "22": 23,
+        "23": 24,
+        "24": 25,
+        "25": 26,
+        "26": 27,
+        "27": 28,
+        "28": 29,
+        "29": 30,
+        "30": 31,
+        "31": 32
+      },
+      "ignored_class_indices": []
+    },
+    "inference_config_sha256": "a942a52858ca0797d8300ac6df9427ac2e2fd49e02116621bef746cdfc0aa402"
+  },
+  "operating_point": {
+    "TP": 3742,
+    "FP": 373,
+    "FN": 169,
+    "score_threshold": 0.55,
+    "iou_threshold": 0.5,
+    "source": "pycocotools.COCOeval.evalImgs"
+  },
+  "per_class": {
+    "beef": {
+      "Precision": 0.9388,
+      "Recall": 0.9728,
+      "F1": 0.9555,
+      "TP": 322,
+      "FP": 21,
+      "FN": 9,
+      "mAP50": 0.9677,
+      "mAP50-95": 0.8283,
+      "AR100": 0.8704
+    },
+    "bellpepper": {
+      "Precision": 0.9176,
+      "Recall": 0.9398,
+      "F1": 0.9286,
+      "TP": 78,
+      "FP": 7,
+      "FN": 5,
+      "mAP50": 0.9701,
+      "mAP50-95": 0.8596,
+      "AR100": 0.8928
+    },
+    "bittergourd": {
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0,
+      "TP": 50,
+      "FP": 0,
+      "FN": 0,
+      "mAP50": 1.0,
+      "mAP50-95": 0.9416,
+      "AR100": 0.958
+    },
+    "bottlegourd": {
+      "Precision": 0.8356,
+      "Recall": 0.8714,
+      "F1": 0.8531,
+      "TP": 122,
+      "FP": 24,
+      "FN": 18,
+      "mAP50": 0.9005,
+      "mAP50-95": 0.7287,
+      "AR100": 0.79
+    },
+    "broccoli": {
+      "Precision": 0.9306,
+      "Recall": 0.9853,
+      "F1": 0.9571,
+      "TP": 67,
+      "FP": 5,
+      "FN": 1,
+      "mAP50": 0.978,
+      "mAP50-95": 0.8749,
+      "AR100": 0.8985
+    },
+    "cabbage": {
+      "Precision": 0.9259,
+      "Recall": 0.9494,
+      "F1": 0.9375,
+      "TP": 75,
+      "FP": 6,
+      "FN": 4,
+      "mAP50": 0.9582,
+      "mAP50-95": 0.8444,
+      "AR100": 0.8671
+    },
+    "carrot": {
+      "Precision": 0.9351,
+      "Recall": 0.973,
+      "F1": 0.9536,
+      "TP": 72,
+      "FP": 5,
+      "FN": 2,
+      "mAP50": 0.9784,
+      "mAP50-95": 0.787,
+      "AR100": 0.827
+    },
+    "cauliflower": {
+      "Precision": 0.9292,
+      "Recall": 0.9633,
+      "F1": 0.9459,
+      "TP": 105,
+      "FP": 8,
+      "FN": 4,
+      "mAP50": 0.9739,
+      "mAP50-95": 0.8477,
+      "AR100": 0.8936
+    },
+    "chayote": {
+      "Precision": 0.9828,
+      "Recall": 1.0,
+      "F1": 0.9913,
+      "TP": 57,
+      "FP": 1,
+      "FN": 0,
+      "mAP50": 1.0,
+      "mAP50-95": 0.9485,
+      "AR100": 0.9684
+    },
+    "chicken": {
+      "Precision": 0.7302,
+      "Recall": 0.92,
+      "F1": 0.8142,
+      "TP": 46,
+      "FP": 17,
+      "FN": 4,
+      "mAP50": 0.8806,
+      "mAP50-95": 0.4565,
+      "AR100": 0.576
+    },
+    "chickenegg": {
+      "Precision": 0.9567,
+      "Recall": 0.991,
+      "F1": 0.9736,
+      "TP": 221,
+      "FP": 10,
+      "FN": 2,
+      "mAP50": 0.9879,
+      "mAP50-95": 0.8428,
+      "AR100": 0.887
+    },
+    "chickenleg": {
+      "Precision": 0.9267,
+      "Recall": 0.9755,
+      "F1": 0.9505,
+      "TP": 518,
+      "FP": 41,
+      "FN": 13,
+      "mAP50": 0.9776,
+      "mAP50-95": 0.8047,
+      "AR100": 0.8567
+    },
+    "chickenwin": {
+      "Precision": 0.9481,
+      "Recall": 0.9669,
+      "F1": 0.9574,
+      "TP": 146,
+      "FP": 8,
+      "FN": 5,
+      "mAP50": 0.9805,
+      "mAP50-95": 0.8256,
+      "AR100": 0.8649
+    },
+    "corn": {
+      "Precision": 0.875,
+      "Recall": 0.9403,
+      "F1": 0.9065,
+      "TP": 126,
+      "FP": 18,
+      "FN": 8,
+      "mAP50": 0.9356,
+      "mAP50-95": 0.7229,
+      "AR100": 0.7799
+    },
+    "cucumber": {
+      "Precision": 0.7522,
+      "Recall": 0.8782,
+      "F1": 0.8103,
+      "TP": 173,
+      "FP": 57,
+      "FN": 24,
+      "mAP50": 0.8643,
+      "mAP50-95": 0.6579,
+      "AR100": 0.7579
+    },
+    "duckegg": {
+      "Precision": 0.94,
+      "Recall": 0.9495,
+      "F1": 0.9447,
+      "TP": 94,
+      "FP": 6,
+      "FN": 5,
+      "mAP50": 0.9495,
+      "mAP50-95": 0.8762,
+      "AR100": 0.9071
+    },
+    "eggplant": {
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0,
+      "TP": 45,
+      "FP": 0,
+      "FN": 0,
+      "mAP50": 1.0,
+      "mAP50-95": 0.8324,
+      "AR100": 0.8667
+    },
+    "garlic": {
+      "Precision": 0.9409,
+      "Recall": 0.9777,
+      "F1": 0.9589,
+      "TP": 175,
+      "FP": 11,
+      "FN": 4,
+      "mAP50": 0.9784,
+      "mAP50-95": 0.8051,
+      "AR100": 0.8475
+    },
+    "ginger": {
+      "Precision": 0.9697,
+      "Recall": 1.0,
+      "F1": 0.9846,
+      "TP": 64,
+      "FP": 2,
+      "FN": 0,
+      "mAP50": 0.9988,
+      "mAP50-95": 0.8562,
+      "AR100": 0.8891
+    },
+    "jicama": {
+      "Precision": 0.8868,
+      "Recall": 0.8624,
+      "F1": 0.8744,
+      "TP": 94,
+      "FP": 12,
+      "FN": 15,
+      "mAP50": 0.895,
+      "mAP50-95": 0.7674,
+      "AR100": 0.8138
+    },
+    "okra": {
+      "Precision": 0.875,
+      "Recall": 0.9891,
+      "F1": 0.9286,
+      "TP": 91,
+      "FP": 13,
+      "FN": 1,
+      "mAP50": 0.9801,
+      "mAP50-95": 0.5563,
+      "AR100": 0.6587
+    },
+    "onion": {
+      "Precision": 0.8662,
+      "Recall": 0.9762,
+      "F1": 0.9179,
+      "TP": 123,
+      "FP": 19,
+      "FN": 3,
+      "mAP50": 0.9584,
+      "mAP50-95": 0.7548,
+      "AR100": 0.8357
+    },
+    "pork": {
+      "Precision": 0.9747,
+      "Recall": 0.9747,
+      "F1": 0.9747,
+      "TP": 77,
+      "FP": 2,
+      "FN": 2,
+      "mAP50": 0.978,
+      "mAP50-95": 0.7948,
+      "AR100": 0.8494
+    },
+    "potato": {
+      "Precision": 0.8889,
+      "Recall": 1.0,
+      "F1": 0.9412,
+      "TP": 56,
+      "FP": 7,
+      "FN": 0,
+      "mAP50": 0.9984,
+      "mAP50-95": 0.9035,
+      "AR100": 0.9304
+    },
+    "pumpkin": {
+      "Precision": 0.8929,
+      "Recall": 0.9615,
+      "F1": 0.9259,
+      "TP": 100,
+      "FP": 12,
+      "FN": 4,
+      "mAP50": 0.9769,
+      "mAP50-95": 0.8684,
+      "AR100": 0.899
+    },
+    "radish": {
+      "Precision": 0.9096,
+      "Recall": 0.9497,
+      "F1": 0.9292,
+      "TP": 151,
+      "FP": 15,
+      "FN": 8,
+      "mAP50": 0.9621,
+      "mAP50-95": 0.7948,
+      "AR100": 0.8434
+    },
+    "scallion": {
+      "Precision": 0.9298,
+      "Recall": 0.9636,
+      "F1": 0.9464,
+      "TP": 53,
+      "FP": 4,
+      "FN": 2,
+      "mAP50": 0.9657,
+      "mAP50-95": 0.7139,
+      "AR100": 0.7545
+    },
+    "shrimp": {
+      "Precision": 0.9412,
+      "Recall": 1.0,
+      "F1": 0.9697,
+      "TP": 48,
+      "FP": 3,
+      "FN": 0,
+      "mAP50": 1.0,
+      "mAP50-95": 0.8555,
+      "AR100": 0.8854
+    },
+    "spongegourd": {
+      "Precision": 0.9521,
+      "Recall": 0.972,
+      "F1": 0.9619,
+      "TP": 139,
+      "FP": 7,
+      "FN": 4,
+      "mAP50": 0.9803,
+      "mAP50-95": 0.8149,
+      "AR100": 0.858
+    },
+    "sweetpotato": {
+      "Precision": 0.7477,
+      "Recall": 0.83,
+      "F1": 0.7867,
+      "TP": 83,
+      "FP": 28,
+      "FN": 17,
+      "mAP50": 0.8266,
+      "mAP50-95": 0.5864,
+      "AR100": 0.715
+    },
+    "tofu": {
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0,
+      "TP": 44,
+      "FP": 0,
+      "FN": 0,
+      "mAP50": 1.0,
+      "mAP50-95": 0.8913,
+      "AR100": 0.9182
+    },
+    "tomato": {
+      "Precision": 0.9695,
+      "Recall": 0.9621,
+      "F1": 0.9658,
+      "TP": 127,
+      "FP": 4,
+      "FN": 5,
+      "mAP50": 0.9943,
+      "mAP50-95": 0.8328,
+      "AR100": 0.878
+    }
+  }
+}

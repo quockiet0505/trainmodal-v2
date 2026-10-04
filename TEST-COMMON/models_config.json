@@ -158,7 +158,7 @@
       "family": "ultralytics",
       "model_type": "yolo",
       "imgsz": 640,
-      "weights": "/storage/yolo11_vol/yolo11_results_v2/weights/best.pt",
+      "weights": "/storage/yolo11_vol/yolo11_results_v4/weights/best.pt",
       "local_weights": "",
       "patience": 10,
       "enabled": true

@@ -2055,8 +2055,8 @@ def merge_team_results(results_dir: str, output_dir: Optional[str] = None):
     gpu=MODAL_GPU,
     volumes={
         "/data": volume,
-        "/storage/yolo11_vol": modal.Volume.from_name("yolo11-v2-vol", create_if_missing=True),
-        "/storage/retinanet_vol": modal.Volume.from_name("retinanet-v2-vol", create_if_missing=True),
+        "/storage/yolo11_vol": modal.Volume.from_name("yolo11-v4-vol", create_if_missing=True),
+        "/storage/retinanet_vol": modal.Volume.from_name("retinanet-v3-vol", create_if_missing=True),
     },
     timeout=MODAL_TIMEOUT
 )

@@ -3,9 +3,9 @@ import modal
 from datetime import datetime
 
 # 1. Access Modal Volume & Folder v3
-vol_name = "retinanet-v2-vol"
+vol_name = "retinanet-v3-vol"
 remote_dir = "retinanet_results_v3"
-remote_file_name = "retinanet_formatted_results_v2.csv"
+remote_file_name = "retinanet_formatted_results_v3.csv"
 
 # 2. Setup Local Save Path & Timestamp
 local_dir = os.path.dirname(os.path.abspath(__file__))

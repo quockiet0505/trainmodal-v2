@@ -3,9 +3,9 @@ import modal
 from datetime import datetime
 
 # 1. Access Modal Volume (Tài khoản Modal: kiệt b2205883)
-vol_name = "yolo11-v2-vol"
-remote_dir = "yolo11_results_v2"
-remote_file_name = "yolo11_formatted_results_v2.csv"
+vol_name = "yolo11-v4-vol"
+remote_dir = "yolo11_results_v4"
+remote_file_name = "yolo11_formatted_results_v4.csv"
 
 # 2. Setup Local Save Path & Timestamp
 local_dir = os.path.dirname(os.path.abspath(__file__))

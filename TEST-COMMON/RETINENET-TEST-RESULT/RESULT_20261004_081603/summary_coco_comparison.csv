@@ -1,0 +1,2 @@
+﻿Mô hình,Precision,Recall,F1,mAP@50,mAP@50-95,mAP@75,AR@100,Patience,GFLOPs,Parameters,Latency,FPS,Trạng thái
+RetinaNet,0.9094,0.9568,0.9325,0.9624,0.7961,0.8793,0.8449,10,86.99,32.86,21.85,45.76,Hoàn tất đánh giá
